@@ -86,7 +86,7 @@ jobs:
 
       - name: upload coverage
         if: always() && (steps.tests.outcome == 'success' || steps.tests.outcome == 'failure')
-        uses: codecov/codecov-action@v2.1.0
+        uses: codecov/codecov-action@v3.1.1
         with:
           flags: unittests
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -161,7 +161,7 @@ jobs:
           obspy-runtests --cov obspy --cov-report='xml' --cov-append --report --network
       - name: upload coverage
         if: always() && (steps.tests.outcome == 'success' || steps.tests.outcome == 'failure')
-        uses: codecov/codecov-action@v2.1.0
+        uses: codecov/codecov-action@v3.1.1
         with:
           flags: unittests
           token: ${{ secrets.CODECOV_TOKEN }}
