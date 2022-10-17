@@ -54,7 +54,7 @@ jobs:
           use-mamba: true
           python-version: ${{ matrix.python-version }}
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3.0.11
         with:
           path: ${{ matrix.prefix }}
           key: ${{ matrix.os }}-py${{ matrix.python-version }}-hash${{ hashFiles('.github/test${{ matrix.allflag }}_conda_env.yml') }}-${{ steps.date.outputs.date }}-${{ env.CACHE_NUMBER }}
@@ -132,7 +132,7 @@ jobs:
           use-mamba: true
           python-version: ${{ matrix.python-version }}
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3.0.11
         with:
           path: ${{ matrix.prefix }}
           key: ${{ matrix.os }}-py${{ matrix.python-version }}-hash${{ hashFiles('.github/test_conda_env.yml') }}-${{ steps.date.outputs.date }}-${{ env.CACHE_NUMBER }}
